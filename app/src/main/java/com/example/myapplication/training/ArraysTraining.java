@@ -22,10 +22,8 @@ public class ArraysTraining {
      */
     public int[] sort(int[] valuesArray) {
         //TODO: implement it
-        for (int i=0; i<valuesArray.length-1; i++)
-        {
-            for (int j=i+1; j<valuesArray.length; j++)
-            {
+        for (int i = 0; i < valuesArray.length - 1; i++) {
+            for (int j = i + 1; j < valuesArray.length; j++) {
                 if (valuesArray[i] > valuesArray[j]) {
                     // swap
                     int a = valuesArray[i];
@@ -47,16 +45,12 @@ public class ArraysTraining {
      */
     public int maxValue(int... values) {
         //TODO: implement it
-        if (values.length ==0 ) return 0;
+        if (values.length == 0) return 0;
 
         int max = values[0];
 
-        for (int i=1; i<values.length; i++)
-        {
-            if (max<values[i])
-            {
-                max = values[i];
-            }
+        for (int i = 1; i < values.length; i++) {
+            max = Math.max(max,values[i]);
         }
 
         return max;
@@ -71,8 +65,7 @@ public class ArraysTraining {
      */
     public int[] reverse(int[] array) {
         //TODO: implement it
-        for (int i=0; i<array.length / 2; i++)
-        {
+        for (int i = 0; i < array.length / 2; i++) {
             //swap
             int a = array[i];
             array[i] = array[array.length - 1 - i];
@@ -95,14 +88,17 @@ public class ArraysTraining {
 
     public int[] fibonacciNumbers(int numbersCount) {
         //TODO: implement it
-        if (numbersCount<1)  return new int[]{};
+        if (numbersCount < 1) return new int[]{};
+
         int[] fibonacci = new int[numbersCount];
         fibonacci[0] = 1;
+
+        if (numbersCount==1) return fibonacci;
+
         fibonacci[1] = 1;
 
-        for (int i=2; i<numbersCount; i++)
-        {
-            fibonacci[i] = fibonacci[i-2] + fibonacci[i - 1];
+        for (int i = 2; i < numbersCount; i++) {
+            fibonacci[i] = fibonacci[i - 2] + fibonacci[i - 1];
         }
 
         return fibonacci;
@@ -118,24 +114,19 @@ public class ArraysTraining {
      */
     public int maxCountSymbol(int[] array) {
         //TODO: implement it
-        if (array.length == 0)  return 0;
+        if (array.length == 0) return 0;
 
         Arrays.sort(array);
 
         int max = 1;
         int current = 1;
 
-        for (int i=1; i<array.length; i++)
-        {
-            if (array[i]==array[i-1])
-            {
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] == array[i - 1]) {
                 current++;
-            }
-            else {
-                if (current>max)
-                {
-                    max = current;
-                }
+            } else {
+                max = Math.max(max,current);
+
                 current = 1;
             }
         }

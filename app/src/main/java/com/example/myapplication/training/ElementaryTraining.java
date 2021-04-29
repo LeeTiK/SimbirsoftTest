@@ -35,8 +35,7 @@ public class ElementaryTraining {
      */
     public double complicatedAmount(int firstValue, int secondValue, int thirdValue) {
         //TODO: implement it
-        double answer = (firstValue * 2) + (secondValue - 3) + (thirdValue * thirdValue);
-        return answer;
+        return (firstValue * 2) + (secondValue - 3) + (thirdValue * thirdValue);
     }
 
     /**
@@ -66,23 +65,20 @@ public class ElementaryTraining {
     // можно было сделать и через стригу, но более затратно
     public int swapNumbers(int value) {
         //TODO: implement it
-        if (value<10 || value>=100000) return value;
+        if (value < 10 || value >= 100000) return value;
 
         int numberOfTens = 1;
         int valueLocal = value;
 
-        while (valueLocal>9)
-        {
-            valueLocal /=10;
-            numberOfTens *=10;
+        while (valueLocal > 9) {
+            valueLocal /= 10;
+            numberOfTens *= 10;
         }
 
         int firstDigit = valueLocal;
         int lastDigit = value % 10;
 
-        int answer = (value - firstDigit*numberOfTens - lastDigit) + lastDigit*numberOfTens + firstDigit;
-
-        return answer;
+        return (value - firstDigit * numberOfTens - lastDigit) + lastDigit * numberOfTens + firstDigit;
     }
 
     /**
@@ -99,19 +95,18 @@ public class ElementaryTraining {
     // можно было сделать и через стригу, но более затратно
     public int zeroEvenNumber(int value) {
         //TODO: implement it
-        if (value<10 || value>=100000) return value;
+        if (value < 10 || value >= 100000) return value;
 
         int numberOfTens = 1;
         int valueLocal = value;
         int answer = 0;
-        int i =1;
+        int i = 1;
 
-        while (valueLocal>0)
-        {
+        while (valueLocal > 0) {
             int digital = valueLocal % 10;
             valueLocal /= 10;
 
-            if (i%2 == 1) {
+            if (i % 2 == 1) {
                 answer += digital * numberOfTens;
             }
 
