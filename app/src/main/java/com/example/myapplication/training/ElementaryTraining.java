@@ -48,7 +48,7 @@ public class ElementaryTraining {
      */
     public int changeValue(int value) {
         //TODO: implement it
-        return value > 3 ? value + 10 : value - 10;
+        return value + (value > 3 ? 10 : -10);
     }
 
     /**
